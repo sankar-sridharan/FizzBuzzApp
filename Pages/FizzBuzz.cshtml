@@ -1,0 +1,23 @@
+﻿@page 
+@model FizzBuzzApp.Pages.FizzBuzzModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<h1>FizzBuzz</h1>
+
+<form method="post">
+    <label for="inputValue">Enter a positive integer:</label>
+    <input type="number" id="inputValue" name="InputValue" min="1" required />
+    <button type="submit">Generate FizzBuzz</button>
+</form>
+
+@if (Model.FizzBuzzResults != null)
+{
+    <h2>Your Input: @Model.InputValue</h2>
+    <h2>Results:</h2>
+    <ul>
+        @foreach (var result in Model.FizzBuzzResults)
+        {
+            <li>@result</li>
+        }
+    </ul>
+}
